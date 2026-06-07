@@ -1,16 +1,15 @@
 {
-  "name": "birthday-site",
+  "name": "pibertday",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://MrAlekse.github.io/birthday-site",
+  "homepage": "https://MrAlekse.github.io/pibertday",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "lint": "eslint ."
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tensorflow-models/face-landmarks-detection": "^1.0.6",

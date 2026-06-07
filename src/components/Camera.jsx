@@ -66,7 +66,7 @@ export default function Camera({ onBlow }) {
             autoPlay
             muted
             playsInline
-            width="350"
+            width="300"
             style={{
                 borderRadius: "10px",
                 marginTop: "20px",
