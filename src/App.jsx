@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Confetti from "react-confetti";
 import Cake from "./components/Cake";
 import Camera from "./components/Camera";
-import "./App.css";
+import "./App.css"
 
 const words = [
     "Lagas kana",
@@ -24,7 +24,6 @@ export default function App() {
     const audioRef = useRef(null);
 
     useEffect(() => {
-        // Only run the typing effect if candles are blown out
         if (!candlesOut) return;
 
         const word = words[wordIndex];
@@ -53,7 +52,8 @@ export default function App() {
         setCandlesOut(true);
 
         if (!audioRef.current) {
-            audioRef.current = new Audio("/happybirthday.mp3");
+            // Use a relative path without a leading slash so GitHub Pages links it correctly
+            audioRef.current = new Audio("happybirthday.mp3");
             audioRef.current.loop = true;
         }
         audioRef.current.play().catch(err => console.log("Audio play blocked:", err));
