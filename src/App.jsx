@@ -24,6 +24,9 @@ export default function App() {
     const audioRef = useRef(null);
 
     useEffect(() => {
+        // Only run the typing effect if candles are blown out
+        if (!candlesOut) return;
+
         const word = words[wordIndex];
         let timeout;
 
@@ -42,7 +45,7 @@ export default function App() {
         }
 
         return () => clearTimeout(timeout);
-    }, [letterIndex, isDeleting, wordIndex]);
+    }, [letterIndex, isDeleting, wordIndex, candlesOut]);
 
     const displayedText = words[wordIndex].substring(0, letterIndex);
 
@@ -58,30 +61,28 @@ export default function App() {
 
     return (
         <div className="app">
-            {!candlesOut ? (
-                <>
-                    <h1>Happy Birthday 20th</h1>
-                    <h2>Patricia June Husain!</h2>
-                    <p>Make a Wish!</p>
+            {candlesOut && <Confetti />}
 
-                    <Cake candlesOut={candlesOut} />
-                    <Camera onBlow={handleBlow} />
-                </>
-            ) : (
-                <>
-                    <Confetti />
-                    <h1>Happy Birthday 20th</h1>
-                    <h2>Patricia June Husain!</h2>
+            <h1>Happy Birthday 20th</h1>
+            <h2>Patricia June Husain!</h2>
+
+            <div className="message-container" style={{ minHeight: "3rem", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                {!candlesOut ? (
+                    <p>Make a Wish!</p>
+                ) : (
                     <p>
                         <span className="text-blue-400" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
                             {displayedText}
                             <span className="cursor">|</span>
                         </span>
                     </p>
+                )}
+            </div>
 
-                    <Cake candlesOut={candlesOut} />
-                </>
-            )}
+            <Cake candlesOut={candlesOut} />
+            <div className="camera-container" style={{ minHeight: "150px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                {!candlesOut && <Camera onBlow={handleBlow} />}
+            </div>
         </div>
     );
 }
