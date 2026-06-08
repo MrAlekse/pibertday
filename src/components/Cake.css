@@ -1,6 +1,6 @@
 .cake-container {
     margin: 60px auto 0;
-    width: 300px;
+    width: 280px;
     position: relative;
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
 }
@@ -16,7 +16,7 @@
 
 /* candle body */
 .candle {
-    width: 14px;
+    width: 12px;
     height: 60px;
     position: relative;
 
@@ -126,14 +126,14 @@
 .plate {
     background: white;
     height: 8px;
-    width: 320px;
+    width: 310px;
     border-radius: 5px;
     margin: 0 auto;
     position: relative;
 }
 
 .top-layer {
-    width: 300px;
+    width: 280px;
     height: 20px;
     background: #805342;
     border-radius: 30px 30px 10px 10px;

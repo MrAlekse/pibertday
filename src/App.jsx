@@ -63,7 +63,7 @@ export default function App() {
         <div className="app">
             {candlesOut && <Confetti />}
 
-            <h1>Happy Birthday 20th</h1>
+            <h1>Happy Birthday</h1>
             <h2>Patricia June Husain!</h2>
 
             <div className="message-container" style={{ minHeight: "3rem", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -80,7 +80,7 @@ export default function App() {
             </div>
 
             <Cake candlesOut={candlesOut} />
-            <div className="camera-container" style={{ minHeight: "150px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <div className="camera-container" style={{ minHeight: "120px", display: "flex", justifyContent: "center", alignItems: "center"}}>
                 {!candlesOut && <Camera onBlow={handleBlow} />}
             </div>
         </div>
