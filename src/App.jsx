@@ -9,7 +9,7 @@ const words = [
     "Have a wonderful day!",
     "Another year survive",
     "+1",
-    "Happy Birthday ate pat",
+    "Happy Birthday",
     "Wishing you all the happiness",
     "Librehi daw ak"
 ];
@@ -52,7 +52,6 @@ export default function App() {
         setCandlesOut(true);
 
         if (!audioRef.current) {
-            // Use a relative path without a leading slash so GitHub Pages links it correctly
             audioRef.current = new Audio("happybirthday.mp3");
             audioRef.current.loop = true;
         }
@@ -64,7 +63,7 @@ export default function App() {
             {candlesOut && <Confetti />}
 
             <h1>Happy Birthday</h1>
-            <h2>Patricia June Husain!</h2>
+            <h2></h2>
 
             <div className="message-container" style={{ minHeight: "3rem", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 {!candlesOut ? (
